@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen - Characters</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom layout additions specific to the character cards */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .char-status {
+            color: #f7b131; /* Gold color matching your grade text */
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin: 5px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .ability-tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: rgba(138, 79, 255, 0.15);
+            border: 1px solid rgba(138, 79, 255, 0.4);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar scrolled"> 
+        <img src="assets/jjklogo.png" alt="jjklogo" class="nav-logo">
+        <nav class="button-container">
+            <a href="jjk.html" class="nav-btn">Home</a>
+            <a href="characters.html" class="nav-btn" style="background-color: #8a4fff; border-color: #8a4fff;">Characters</a>
+            <a href="#" class="nav-btn">Domains</a>
+        </nav>
+    </header>
+
+    <main class="episodes-container" style="margin-top: 130px;">
+        <div class="aura-left"></div>
+        <div class="aura-right"></div>
+        <div class="domain-grid-bg"></div>
+        
+        <section class="season-section">
+            <h2 class="season-title">Tokyo Jujutsu High</h2>
+            <div class="character-grid">
+                
+                <div class="episode-card">
+                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
+                        <img src="assets/yuji.jpg" alt="Yuji Itadori" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="episode-info">
+                        <h3>Yuji Itadori</h3>
+                        <p class="char-status">Grade: Inherent Talent</p>
+                        <p>A naturally gifted athlete who became the vessel for Ryomen Sukuna after swallowing one of his cursed fingers.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Divergent Fist</span>
+                            <span class="tag">Black Flash</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
+                        <img src="assets/gojo.jpg" alt="Satoru Gojo" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="episode-info">
+                        <h3>Satoru Gojo</h3>
+                        <p class="char-status">Grade: Special Grade</p>
+                        <p>The strongest jujutsu sorcerer alive. A first-year teacher at Tokyo High who inherits both the Limitless and Six Eyes.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Limitless</span>
+                            <span class="tag">Unlimited Void</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
+                        <img src="assets/megumi.jpg" alt="Megumi Fushiguro" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="episode-info">
+                        <h3>Megumi Fushiguro</h3>
+                        <p class="char-status">Grade: Grade 2</p>
+                        <p>A calm first-year student utilizing the Zen'in clan's prized Ten Shadows Technique to summon powerful Shikigami.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Ten Shadows</span>
+                            <span class="tag">Chimera Shadow Garden</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
+                        <img src="assets/nobara.jpg" alt="Nobara Kugisaki" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="episode-info">
+                        <h3>Nobara Kugisaki</h3>
+                        <p class="char-status">Grade: Grade 3</p>
+                        <p>A fierce and confident girl from the countryside who manipulates cursed energy through her hammer, nails, and straw doll.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Straw Doll Technique</span>
+                            <span class="tag">Resonance</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="season-section" style="margin-top: 60px;">
+            <h2 class="season-title">Cursed Spirits</h2>
+            <div class="character-grid">
+
+                <div class="episode-card">
+                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
+                        <img src="assets/sukuna.jpg" alt="Ryomen Sukuna" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="episode-info">
+                        <h3>Ryomen Sukuna</h3>
+                        <p class="char-status">Grade: Special Grade (King of Curses)</p>
+                        <p>An absolute tyrant who ruled over a thousand years ago. Currently co-existing inside Yuji Itadori's body.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Dismantle & Cleave</span>
+                            <span class="tag">Malevolent Shrine</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
