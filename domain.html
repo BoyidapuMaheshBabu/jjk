@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen - Domain Expansion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Reset and enforce full viewport sizing */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #05010a;
+        }
+
+        /* --- Floating Transparent Navbar Elements --- */
+        .navbar {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 1000 !important;
+            background: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border-bottom: none !important;
+            box-shadow: none !important;
+            padding: 30px 50px !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            transition: opacity 0.6s ease, visibility 0.6s ease !important;
+        }
+
+        /* The main cinematic theater wrapper */
+        .theater-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 5;
+        }
+
+        /* Individual slide styling */
+        .domain-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .domain-slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Full screen background video layout */
+        .slide-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        /* FIXED: Tone down the overlay opacity drastically so the video is crystal clear */
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(5,1,10,0.6) 0%, rgba(5,1,10,0.2) 50%, rgba(0,0,0,0) 100%);
+            z-index: 2;
+            transition: opacity 0.6s ease;
+        }
+
+        /* Left-aligned description content panel */
+        .slide-content {
+            position: relative;
+            z-index: 10;
+            max-width: 600px;
+            padding: 0 50px;
+            margin-top: 80px;
+            transform: translateX(-30px);
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .domain-slide.active .slide-content {
+            transform: translateX(0);
+        }
+
+        .slide-content h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-user {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .slide-desc {
+            font-size: 1.1rem;
+            color: #dcdcdc;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .sure-hit-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Cinematic State: Hides elements completely for uninterrupted action views */
+        .cinematic-hide {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+
+        /* Navigation Arrows styling */
+        .slider-nav {
+            position: absolute;
+            bottom: 50px;
+            right: 130px; 
+            z-index: 20;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-arrow {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background: #8a4fff;
+            border-color: #8a4fff;
+            box-shadow: 0 0 15px rgba(138, 79, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        /* Floating Sound Toggle Action Trigger Button */
+        .audio-toggle-btn {
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .audio-toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        /* Accents */
+        .badge-gojo { background: rgba(79, 147, 255, 0.2); border: 1px solid #4f93ff; color: #b3cfff; text-shadow: 0 0 10px rgba(79,147,255,0.4); }
+        .badge-sukuna { background: rgba(255, 62, 62, 0.2); border: 1px solid #ff3e3e; color: #ffb3b3; text-shadow: 0 0 10px rgba(255,62,62,0.4); }
+        .badge-megumi { background: rgba(161, 115, 255, 0.2); border: 1px solid #a173ff; color: #e1d5ff; text-shadow: 0 0 10px rgba(161,115,255,0.4); }
+
+        .title-gojo { color: #8cb4ff; text-shadow: 0 0 15px rgba(140, 180, 255, 0.3); }
+        .title-sukuna { color: #ff6666; text-shadow: 0 0 15px rgba(255, 102, 102, 0.3); }
+        .title-megumi { color: #c2a3ff; text-shadow: 0 0 15px rgba(194, 163, 255, 0.3); }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 20px !important; }
+            .slide-overlay { background: linear-gradient(180deg, rgba(5,1,10,0.3) 0%, rgba(5,1,10,0.7) 70%); }
+            .domain-slide { align-items: flex-end; }
+            .slide-content { padding: 0 24px 200px 24px; }
+            .slide-content h2 { font-size: 2rem; }
+            .slider-nav { bottom: 40px; right: auto; left: 24px; }
+            .audio-toggle-btn { bottom: 40px; right: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar" id="mainNavbar"> 
+        <img src="assets/jjklogo.png" alt="jjklogo" class="nav-logo">
+        <nav class="button-container">
+            <a href="jjk.html" class="nav-btn">Home</a>
+            <a href="characters.html" class="nav-btn">Characters</a>
+            <a href="domain.html" class="nav-btn" style="background-color: #8a4fff; border-color: #8a4fff;">Domain Expansion</a>
+        </nav>
+    </header>
+
+    <main class="theater-container">
+        
+        <div class="domain-slide active">
+            <video class="slide-video-bg" autoplay loop muted playsinline preload="auto">
+                <source src="assets/gojo-domainexpansion.mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2 class="title-gojo">Unlimited Void</h2>
+                <div class="slide-user" style="color: #cbdcff;">User: Satoru Gojo</div>
+                <p class="slide-desc">
+                    Forces the target to receive an infinite influx of information, paralyzing them entirely with a sensory overload that prevents any physical or mental reaction.
+                </p>
+                <span class="sure-hit-badge badge-gojo">Sure-Hit: Absolute Paralysis</span>
+            </div>
+        </div>
+
+        <div class="domain-slide">
+            <video class="slide-video-bg" loop muted playsinline preload="auto">
+                <source src="assets/sukuna-domainexpansion.mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2 class="title-sukuna">Malevolent Shrine</h2>
+                <div class="slide-user" style="color: #ffb3b3;">User: Ryomen Sukuna</div>
+                <p class="slide-desc">
+                    A divine technique that doesn't create a separate barrier dimension. By creating an open-barrier vow, it can extend outwards up to 200 meters to shred everything within reach using Cleave and Dismantle.
+                </p>
+                <span class="sure-hit-badge badge-sukuna">Sure-Hit: Endless Slashing</span>
+            </div>
+        </div>
+
+        <div class="domain-slide">
+            <video class="slide-video-bg" loop muted playsinline preload="auto">
+                <source src="assets/Gojo Uses 0.2 Seconds Domain Expansion _ Jujutsu Kaisen Season 2 .mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2 class="title-megumi">UNLIMITED VOID (0.2-Second Activation)</h2>
+                <div class="slide-user" style="color: #e1d5ff;">User: Satoru Gojo</div>
+                <p class="slide-desc">
+                    Floods the surrounding area with fluid shadows, enabling the continuous manifestation of multiple high-level shikigami and cloning capabilities from the ground up.
+                </p>
+                <span class="sure-hit-badge badge-megumi">Status: Infinite Void</span>
+            </div>
+        </div>
+
+        <div class="slider-nav">
+            <button class="nav-arrow" id="prevBtn">❬</button>
+            <button class="nav-arrow" id="nextBtn">❭</button>
+        </div>
+
+        <button class="audio-toggle-btn" id="audioToggle">🔇</button>
+
+    </main>
+
+    <script>
+        const slides = document.querySelectorAll('.domain-slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const audioToggle = document.getElementById('audioToggle');
+        const navbar = document.getElementById('mainNavbar');
+        
+        let currentIdx = 0;
+        let isGlobalMuted = true;
+
+        // Synchronize and toggle cinematic text fadeout visibility states
+        function updateCinematicView() {
+            const currentContent = slides[currentIdx].querySelector('.slide-content');
+            const currentOverlay = slides[currentIdx].querySelector('.slide-overlay');
+            
+            if (!isGlobalMuted) {
+                // Audio is playing -> Hide captions and navbar for movie theater clarity
+                navbar.classList.add('cinematic-hide');
+                if (currentContent) currentContent.classList.add('cinematic-hide');
+                if (currentOverlay) currentOverlay.style.opacity = '0'; 
+            } else {
+                // Muted -> Bring captions back seamlessly
+                navbar.classList.remove('cinematic-hide');
+                if (currentContent) currentContent.classList.remove('cinematic-hide');
+                if (currentOverlay) currentOverlay.style.opacity = '1';
+            }
+        }
+
+        function showSlide(index) {
+            const currentVideo = slides[currentIdx].querySelector('.slide-video-bg');
+            currentVideo.pause();
+
+            // Clear absolute clean state parameters across hidden elements
+            const currentContent = slides[currentIdx].querySelector('.slide-content');
+            if (currentContent) currentContent.classList.remove('cinematic-hide');
+            navbar.classList.remove('cinematic-hide');
+
+            slides[currentIdx].classList.remove('active');
+            currentIdx = (index + slides.length) % slides.length;
+            slides[currentIdx].classList.add('active');
+
+            const nextVideo = slides[currentIdx].querySelector('.slide-video-bg');
+            nextVideo.muted = isGlobalMuted;
+            nextVideo.currentTime = 0;
+            nextVideo.play().catch(err => console.log("Playback interaction flag:", err));
+
+            updateCinematicView();
+        }
+
+        prevBtn.addEventListener('click', () => showSlide(currentIdx - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentIdx + 1));
+
+        audioToggle.addEventListener('click', () => {
+            isGlobalMuted = !isGlobalMuted;
+            audioToggle.textContent = isGlobalMuted ? "🔇" : "🔊";
+
+            const activeVideo = slides[currentIdx].querySelector('.slide-video-bg');
+            activeVideo.muted = isGlobalMuted;
+
+            updateCinematicView();
+        });
+    </script>
+
+</body>
+</html>
