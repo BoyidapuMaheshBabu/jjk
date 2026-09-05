@@ -10,7 +10,7 @@ function unlockAudio(e) {
     if (e.target === audioBtn) return; 
 
     // Only attempt playback adjustments if the video isn't hidden deep down
-    if (window.scrollY <= 700) {
+    if (window.scrollY <= 400) {
         video.muted = false;
         audioBtn.textContent = "🔊";
         video.play().catch(err => console.log("Playback pending user interaction...", err));
@@ -36,7 +36,7 @@ audioBtn.addEventListener('click', (e) => {
         video.muted = false;
         audioBtn.textContent = "🔊"; 
         // Re-trigger play in case scroll logic paused it unexpectedly
-        if (window.scrollY <= 700) {
+        if (window.scrollY <= 400) {
             video.play().catch(err => console.log("Playback failed on manual unmute:", err));
         }
     } else {
@@ -52,7 +52,7 @@ window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     const currentScroll = window.scrollY;
     
-    if (currentScroll > 700) {
+    if (currentScroll > 400) {
         if (!isDeepScrolled) {
             navbar.classList.add('scrolled');
             video.pause(); // Freezes rendering thread, saving hardware resources
