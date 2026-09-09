@@ -1,27 +1,18 @@
-# JJK Websites
+# JJK Websites 🌐
 
-A collection of web projects inspired by Jujutsu Kaisen featuring character information, lore, and interactive content.
+An educational web project inspired by **Jujutsu Kaisen**, built while learning frontend development, Git/GitHub, and deployment.
 
-## ⚠️ Disclaimer
-
-This is an **unofficial fan project** created for educational and portfolio purposes only.
-
-- **Jujutsu Kaisen** © Gege Akutami & MAPPA Studio
-- Not affiliated with or endorsed by official sources
-- All content is used for fan purposes only
-- No commercial use or monetization
-- For learning and entertainment only
-
-If you are the copyright holder and want this project removed, please contact us immediately.
+> **Unofficial fan project — created for learning and portfolio purposes.**
 
 ## Features
 
-- Character Database
-- Episode Guide
-- Cursed Technique Explorer
-- Responsive Design
-- Dark Theme
-- Search Functionality
+- Character database
+- Episode guide
+- Cursed technique explorer
+- Search functionality
+- Responsive design
+- Dark theme
+- Structured JSON data
 
 ## Tech Stack
 
@@ -30,8 +21,29 @@ If you are the copyright holder and want this project removed, please contact us
 - JavaScript (ES6+)
 - JSON
 
-## Installation
+## Live Demo
+
+**[Open the deployed website](https://jujutsukaisenexplorer.netlify.app/)**
+
+## Run Locally
 
 ```bash
-git clone https://github.com/yourusername/jjk-websites.git
-cd jjk-websites
+git clone https://github.com/maheshbabuboyidapu-alt/jjk.git
+cd jjk
+```
+
+Then open the project's main HTML file in a browser, or use a local development server.
+
+## Project Context
+
+This was one of my earlier practical web-development projects. It helped me learn how to structure a frontend project, work with HTML/CSS/JavaScript, manage source code with Git/GitHub, and deploy a website online.
+
+## Disclaimer
+
+This is an unofficial fan project and is not affiliated with or endorsed by the copyright holders or official Jujutsu Kaisen sources.
+
+Jujutsu Kaisen and related characters, names, and original creative works belong to their respective rights holders. This repository is intended for educational and non-commercial fan use.
+
+---
+
+**An early project in my development journey — kept as a record of where I started and how my skills have grown.**
