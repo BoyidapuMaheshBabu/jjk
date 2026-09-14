@@ -28,7 +28,7 @@ An educational web project inspired by **Jujutsu Kaisen**, built while learning 
 ## Run Locally
 
 ```bash
-git clone https://github.com/maheshbabuboyidapu-alt/jjk.git
+git clone https://github.com/BoyidapuMaheshBabu/jjk.git
 cd jjk
 ```
 
