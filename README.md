@@ -4,11 +4,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-00C853?style=for-the-badge)](https://jujutsukaisenexplorer.netlify.app/)
 
-## 🌐 Live Demo
-
-**[Open the website →](https://jujutsukaisenexplorer.netlify.app/)**
-
-Jujutsu Kaisen Explorer is an anime-themed website for exploring characters, episodes, and cursed techniques through a simple interactive interface.
+**Live Demo:** https://jujutsukaisenexplorer.netlify.app/
 
 ## ⭐ Highlights
 
@@ -20,34 +16,32 @@ Jujutsu Kaisen Explorer is an anime-themed website for exploring characters, epi
 - Dark theme
 - Structured JSON data
 
+## 💡 What It Does
+
+Jujutsu Kaisen Explorer is an anime-themed website for exploring characters, episodes, and cursed techniques through a simple interactive interface.
+
 ## 🧠 What I Learned
 
-This was one of my earlier practical web projects. I used it to learn by building and by solving implementation problems as they appeared.
+This was an early practical web project. I used it to learn by building and by solving implementation problems as they appeared.
 
-The main areas I explored were:
+Key areas explored:
 
 - organizing website files and project structure
 - building with HTML, CSS, and JavaScript
-- working with structured data
+- working with structured JSON data
 - managing source code with Git and GitHub
 - understanding the deployment workflow
-- publishing a website and maintaining the live version
+- publishing and maintaining a live website
 
 ## 🤖 AI-Assisted Development
 
 The project was built incrementally with AI assistance.
 
-I used AI as a development and learning tool while working through unfamiliar implementation details and problems. The project helped me learn from the issues that appeared during development rather than following a fixed tutorial from start to finish.
+I used AI as a development and learning tool while working through unfamiliar implementation details and problems. The project helped me learn from issues that appeared during development rather than following a fixed tutorial from start to finish.
 
 ## 🛠️ Technology
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- JSON
-- Git
-- GitHub
-- Netlify
+HTML5 · CSS3 · JavaScript (ES6+) · JSON · Git · GitHub · Netlify
 
 ## 📁 Run Locally
 
@@ -58,7 +52,7 @@ cd jjk
 
 Then open the project's main HTML file in a browser, or use a local development server.
 
-## 📌 Project Status
+## 📌 Status
 
 **Learning project / completed version**
 
@@ -72,4 +66,4 @@ Jujutsu Kaisen and related characters, names, and original creative works belong
 
 ---
 
-**An early project kept as evidence of what I learned while building and deploying a real website.**
+**An early project kept as evidence of practical frontend and deployment learning.**
