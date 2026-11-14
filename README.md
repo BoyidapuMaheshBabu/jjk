@@ -67,3 +67,12 @@ Jujutsu Kaisen and related characters, names, and original creative works belong
 ---
 
 **An early project kept as evidence of practical frontend and deployment learning.**
+
+---
+
+## 👨‍💻 Developer
+
+**Boyidapu Mahesh Babu**  
+Diploma in Computer Science Engineering student
+
+[GitHub Profile](https://github.com/BoyidapuMaheshBabu)
