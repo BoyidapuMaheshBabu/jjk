@@ -203,10 +203,28 @@
         .badge-gojo { background: rgba(79, 147, 255, 0.2); border: 1px solid #4f93ff; color: #b3cfff; text-shadow: 0 0 10px rgba(79,147,255,0.4); }
         .badge-sukuna { background: rgba(255, 62, 62, 0.2); border: 1px solid #ff3e3e; color: #ffb3b3; text-shadow: 0 0 10px rgba(255,62,62,0.4); }
         .badge-megumi { background: rgba(161, 115, 255, 0.2); border: 1px solid #a173ff; color: #e1d5ff; text-shadow: 0 0 10px rgba(161,115,255,0.4); }
+        .badge-mahito { background: rgba(255, 140, 0, 0.2); border: 1px solid #ff8c00; color: #ffcc80; text-shadow: 0 0 10px rgba(255,140,0,0.4); }
+        .badge-dagon { background: rgba(0, 150, 136, 0.2); border: 1px solid #009688; color: #80cbc4; text-shadow: 0 0 10px rgba(0,150,136,0.4); }
 
         .title-gojo { color: #8cb4ff; text-shadow: 0 0 15px rgba(140, 180, 255, 0.3); }
         .title-sukuna { color: #ff6666; text-shadow: 0 0 15px rgba(255, 102, 102, 0.3); }
         .title-megumi { color: #c2a3ff; text-shadow: 0 0 15px rgba(194, 163, 255, 0.3); }
+        .title-mahito { color: #ffaa00; text-shadow: 0 0 15px rgba(255, 170, 0, 0.3); }
+        .title-dagon { color: #80cbc4; text-shadow: 0 0 15px rgba(128, 203, 196, 0.3); }
+
+        /* Placeholder used when domain video is not yet available */
+        .slide-placeholder {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+            background: radial-gradient(circle at 30% 30%, rgba(138, 79, 255, 0.18) 0%, transparent 45%, #05010a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.12);
+        }
 
         @media (max-width: 768px) {
             .navbar { padding: 20px !important; }
@@ -266,6 +284,7 @@
             <video class="slide-video-bg" loop muted playsinline preload="auto">
                 <source src="assets/Gojo Uses 0.2 Seconds Domain Expansion _ Jujutsu Kaisen Season 2 .mp4" type="video/mp4">
             </video>
+            <div class="slide-placeholder">G</div>
             <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2 class="title-megumi">UNLIMITED VOID (0.2-Second Activation)</h2>
@@ -274,6 +293,32 @@
                     Floods the surrounding area with fluid shadows, enabling the continuous manifestation of multiple high-level shikigami and cloning capabilities from the ground up.
                 </p>
                 <span class="sure-hit-badge badge-megumi">Status: Infinite Void</span>
+            </div>
+        </div>
+
+        <div class="domain-slide">
+            <div class="slide-placeholder">M</div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2 class="title-mahito">Self-Embodiment of Perfection</h2>
+                <div class="slide-user" style="color: #ffcc80;">User: Mahito</div>
+                <p class="slide-desc">
+                    Mahito's ultimate domain. Inside, his Idle Transfiguration is guaranteed to strike — any soul he touches can be reshaped instantly, turning allies into monsters or ending them outright.
+                </p>
+                <span class="sure-hit-badge badge-mahito">Sure-Hit: Idle Transfiguration</span>
+            </div>
+        </div>
+
+        <div class="domain-slide">
+            <div class="slide-placeholder">D</div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2 class="title-dagon">Horizon of the Captivating Skandha</h2>
+                <div class="slide-user" style="color: #80cbc4;">User: Dagon</div>
+                <p class="slide-desc">
+                    A beach-like barrier domain that traps all within sight, unleashing an endless swarm of shikigami piranhas from all directions with no escape.
+                </p>
+                <span class="sure-hit-badge badge-dagon">Sure-Hit: Shikigami Swarm</span>
             </div>
         </div>
 
