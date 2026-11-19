@@ -6,30 +6,29 @@
     <title>Jujutsu Kaisen - Characters</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Custom layout additions specific to the character cards */
         .character-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-        
+
         .char-status {
-            color: #f7b131; /* Gold color matching your grade text */
+            color: #f7b131;
             font-size: 0.85rem;
             font-weight: bold;
             margin: 5px 0 10px 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .ability-tags {
             margin-top: 15px;
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
-        
+
         .tag {
             background: rgba(138, 79, 255, 0.15);
             border: 1px solid rgba(138, 79, 255, 0.4);
@@ -40,31 +39,33 @@
             font-weight: 600;
         }
 
-        /* Placeholder used when character artwork is not yet available */
-        .char-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(138, 79, 255, 0.25), rgba(214, 40, 40, 0.25));
-            border-radius: 8px;
-            overflow: hidden;
+        .section-header {
+            margin-top: 80px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-primary);
+            padding-left: 15px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 3rem;
+            gap: 12px;
+        }
+
+        .section-count {
+            background: var(--accent-primary);
+            color: #fff;
+            font-size: 0.75rem;
             font-weight: 800;
-            color: rgba(255, 255, 255, 0.45);
+            padding: 3px 10px;
+            border-radius: var(--radius-sm);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 1px solid rgba(138, 79, 255, 0.2);
         }
     </style>
 </head>
 <body>
 
-    <header class="navbar scrolled"> 
+    <header class="navbar scrolled">
         <img src="assets/jjklogo.png" alt="jjklogo" class="nav-logo">
         <nav class="button-container">
-            <a href="jjk.html" class="nav-btn">Home</a>
+            <a href="index.html" class="nav-btn">Home</a>
             <a href="characters.html" class="nav-btn" style="background-color: #8a4fff; border-color: #8a4fff;">Characters</a>
             <a href="domain.html" class="nav-btn">Domains</a>
         </nav>
@@ -74,15 +75,28 @@
         <div class="aura-left"></div>
         <div class="aura-right"></div>
         <div class="domain-grid-bg"></div>
-        
+
+        <!-- Tokyo Jujutsu High Students -->
         <section class="season-section">
-            <h2 class="season-title">Tokyo Jujutsu High</h2>
+            <h2 class="section-header">
+                Tokyo Jujutsu High
+                <span class="section-count">7 students</span>
+            </h2>
             <div class="character-grid">
-                
+
                 <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <img src="assets/yuji.jpg" alt="Yuji Itadori" style="height: 100%; object-fit: cover;">
-                    </div>
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yuji Itadori">
+                        <defs>
+                            <linearGradient id="placeholderGradYuji" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradYuji)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">YI</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Yuji Itadori</text>
+                    </svg>
                     <div class="episode-info">
                         <h3>Yuji Itadori</h3>
                         <p class="char-status">Grade: Inherent Talent</p>
@@ -95,24 +109,18 @@
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <img src="assets/gojo.jpg" alt="Satoru Gojo" style="height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="episode-info">
-                        <h3>Satoru Gojo</h3>
-                        <p class="char-status">Grade: Special Grade</p>
-                        <p>The strongest jujutsu sorcerer alive. A first-year teacher at Tokyo High who inherits both the Limitless and Six Eyes.</p>
-                        <div class="ability-tags">
-                            <span class="tag">Limitless</span>
-                            <span class="tag">Unlimited Void</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <img src="assets/megumi.jpg" alt="Megumi Fushiguro" style="height: 100%; object-fit: cover;">
-                    </div>
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Megumi Fushiguro">
+                        <defs>
+                            <linearGradient id="placeholderGradMegumi" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradMegumi)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">MF</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Megumi Fushiguro</text>
+                    </svg>
                     <div class="episode-info">
                         <h3>Megumi Fushiguro</h3>
                         <p class="char-status">Grade: Grade 2</p>
@@ -125,9 +133,18 @@
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <img src="assets/nobara.jpg" alt="Nobara Kugisaki" style="height: 100%; object-fit: cover;">
-                    </div>
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nobara Kugisaki">
+                        <defs>
+                            <linearGradient id="placeholderGradNobara" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradNobara)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">NK</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Nobara Kugisaki</text>
+                    </svg>
                     <div class="episode-info">
                         <h3>Nobara Kugisaki</h3>
                         <p class="char-status">Grade: Grade 3</p>
@@ -140,9 +157,148 @@
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <div class="char-placeholder">K</div>
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maki Zen'in">
+                        <defs>
+                            <linearGradient id="placeholderGradMaki" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradMaki)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">MZ</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Maki Zen'in</text>
+                    </svg>
+                    <div class="episode-info">
+                        <h3>Maki Zen'in</h3>
+                        <p class="char-status">Grade: Grade 4 (non-sorcerer by birth)</p>
+                        <p>Born without cursed energy into the Zen'in clan, she fights with cursed weapons and sheer physical mastery.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Cursed Tools</span>
+                            <span class="tag">Heavenly Restriction</span>
+                        </div>
                     </div>
+                </div>
+
+                <div class="episode-card">
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Toge Inumaki">
+                        <defs>
+                            <linearGradient id="placeholderGradToge" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradToge)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">TI</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Toge Inumaki</text>
+                    </svg>
+                    <div class="episode-info">
+                        <h3>Toge Inumaki</h3>
+                        <p class="char-status">Grade: Semi-Grade 1</p>
+                        <p>A quiet first-year who wields Cursed Speech, infusing his words with cursed energy to force others to obey his commands.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Cursed Speech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Panda">
+                        <defs>
+                            <linearGradient id="placeholderGradPanda" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradPanda)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">PD</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Panda</text>
+                    </svg>
+                    <div class="episode-info">
+                        <h3>Panda</h3>
+                        <p class="char-status">Grade: Grade 2 (cursed corpse)</p>
+                        <p>An abrupt mutated cursed corpse created by Principal Yaga, capable of switching between multiple cores in battle.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Gorilla Mode</span>
+                            <span class="tag">Drumming Beat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aoi Todo">
+                        <defs>
+                            <linearGradient id="placeholderGradTodo" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradTodo)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">AT</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Aoi Todo</text>
+                    </svg>
+                    <div class="episode-info">
+                        <h3>Aoi Todo</h3>
+                        <p class="char-status">Grade: Grade 1</p>
+                        <p>Boisterous Kyoto student whose Boogie Woogie technique lets him swap the positions of anything with cursed energy.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Boogie Woogie</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Teachers & Kyoto School -->
+        <section class="season-section" style="margin-top: 60px;">
+            <h2 class="section-header">
+                Teachers & Kyoto School
+                <span class="section-count">5 sorcerers</span>
+            </h2>
+            <div class="character-grid">
+
+                <div class="episode-card">
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Satoru Gojo">
+                        <defs>
+                            <linearGradient id="placeholderGradGojo" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradGojo)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">SG</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Satoru Gojo</text>
+                    </svg>
+                    <div class="episode-info">
+                        <h3>Satoru Gojo</h3>
+                        <p class="char-status">Grade: Special Grade</p>
+                        <p>The strongest jujutsu sorcerer alive. A first-year teacher at Tokyo High who inherits both the Limitless and Six Eyes.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Limitless</span>
+                            <span class="tag">Six Eyes</span>
+                            <span class="tag">Unlimited Void</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kento Nanami">
+                        <defs>
+                            <linearGradient id="placeholderGradNanami" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradNanami)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">KN</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Kento Nanami</text>
+                    </svg>
                     <div class="episode-info">
                         <h3>Kento Nanami</h3>
                         <p class="char-status">Grade: Grade 1</p>
@@ -155,30 +311,71 @@
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <div class="char-placeholder">T</div>
-                    </div>
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mei Mei">
+                        <defs>
+                            <linearGradient id="placeholderGradMei" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradMei)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">MM</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Mei Mei</text>
+                    </svg>
                     <div class="episode-info">
-                        <h3>Aoi Todo</h3>
+                        <h3>Mei Mei</h3>
                         <p class="char-status">Grade: Grade 1</p>
-                        <p>Boisterous Kyoto student whose Boogie Woogie technique lets him swap the positions of anything with cursed energy.</p>
+                        <p>A greedy and pragmatic sorcerer who commands crows through her cursed technique and works purely for profit.</p>
                         <div class="ability-tags">
-                            <span class="tag">Boogie Woogie</span>
+                            <span class="tag">Bird Strike</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <div class="char-placeholder">M</div>
-                    </div>
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Naobito Zen'in">
+                        <defs>
+                            <linearGradient id="placeholderGradNaobito" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradNaobito)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">NZ</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Naobito Zen'in</text>
+                    </svg>
                     <div class="episode-info">
-                        <h3>Maki Zen'in</h3>
-                        <p class="char-status">Grade: Grade 4 (non-sorcerer by birth)</p>
-                        <p>Born without cursed energy into the Zen'in clan, she fights with cursed weapons and sheer physical mastery.</p>
+                        <h3>Naobito Zen'in</h3>
+                        <p class="char-status">Grade: Special Grade</p>
+                        <p>Head of the Zen'in clan and one of the fastest sorcerers, known for his Projection Sorcery technique.</p>
                         <div class="ability-tags">
-                            <span class="tag">Cursed Tools</span>
-                            <span class="tag">Heavenly Restriction</span>
+                            <span class="tag">Projection Sorcery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Utahime Iori">
+                        <defs>
+                            <linearGradient id="placeholderGradUtahime" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradUtahime)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">UI</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Utahime Iori</text>
+                    </svg>
+                    <div class="episode-info">
+                        <h3>Utahime Iori</h3>
+                        <p class="char-status">Grade: Semi-Grade 1</p>
+                        <p>A Kyoto High supervisor and sorcerer who uses a Simple Domain technique to protect against domain expansions.</p>
+                        <div class="ability-tags">
+                            <span class="tag">Simple Domain</span>
+                            <span class="tag">Blast</span>
                         </div>
                     </div>
                 </div>
@@ -186,14 +383,27 @@
             </div>
         </section>
 
+        <!-- Major Curses -->
         <section class="season-section" style="margin-top: 60px;">
-            <h2 class="season-title">Cursed Spirits</h2>
+            <h2 class="section-header">
+                Major Curses
+                <span class="section-count">4 entities</span>
+            </h2>
             <div class="character-grid">
 
                 <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <img src="assets/sukuna.jpg" alt="Ryomen Sukuna" style="height: 100%; object-fit: cover;">
-                    </div>
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ryomen Sukuna">
+                        <defs>
+                            <linearGradient id="placeholderGradSukuna" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradSukuna)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">RS</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Ryomen Sukuna</text>
+                    </svg>
                     <div class="episode-info">
                         <h3>Ryomen Sukuna</h3>
                         <p class="char-status">Grade: Special Grade (King of Curses)</p>
@@ -206,9 +416,18 @@
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <div class="char-placeholder">H</div>
-                    </div>
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mahito">
+                        <defs>
+                            <linearGradient id="placeholderGradMahito" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradMahito)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">MH</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Mahito</text>
+                    </svg>
                     <div class="episode-info">
                         <h3>Mahito</h3>
                         <p class="char-status">Special Grade Cursed Spirit</p>
@@ -221,9 +440,18 @@
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <div class="char-placeholder">J</div>
-                    </div>
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Jogo">
+                        <defs>
+                            <linearGradient id="placeholderGradJogo" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradJogo)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">JG</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Jogo</text>
+                    </svg>
                     <div class="episode-info">
                         <h3>Jogo</h3>
                         <p class="char-status">Special Grade Cursed Spirit</p>
@@ -236,15 +464,25 @@
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-thumbnail" style="aspect-ratio: 3/4;">
-                        <div class="char-placeholder">H2</div>
-                    </div>
+                    <svg class="placeholder-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kenjaku">
+                        <defs>
+                            <linearGradient id="placeholderGradKenjaku" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a4fff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#d62828;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="400" fill="url(#placeholderGradKenjaku)" rx="8"/>
+                        <rect x="2" y="2" width="296" height="396" fill="none" stroke="#8a4fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="8,6" rx="6"/>
+                        <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#8a4fff" fill-opacity="0.7" text-transform="uppercase" letter-spacing="2">KJ</text>
+                        <text x="150" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" fill-opacity="0.35">Kenjaku</text>
+                    </svg>
                     <div class="episode-info">
-                        <h3>Hanami</h3>
+                        <h3>Kenjaku</h3>
                         <p class="char-status">Special Grade Cursed Spirit</p>
-                        <p>A forest-born curse who manipulates plants and emerged during the Kyoto Goodwill Event.</p>
+                        <p>An ancient curse user who has lived for over a thousand years by hopping between bodies and orchestrating the Culling Games.</p>
                         <div class="ability-tags">
-                            <span class="tag">Plant Manipulation</span>
+                            <span class="tag">Cursed Spirit Manipulation</span>
+                            <span class="tag">Body Hopping</span>
                         </div>
                     </div>
                 </div>
